@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+jobs:
+  test:
+    name: テスト
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run spell check
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+
+      - run: npm install -g cspell
+      - run: cspell --config ./cspell.json "**/*.md"
