@@ -1,1 +1,10 @@
-{}
+{
+    "version": "0.2",
+    "language": "ja",
+    "words": [
+        "visualstudio"
+    ],
+    "flagWords": [
+        "hte"
+    ]
+}
